@@ -1,0 +1,17 @@
+{
+  "name": "Griddle Card Designer",
+  "description": "Demo for <griddles-ui-card>",
+  "version": "0.3.0",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": {
+    "48":  "i.png",
+    "16":  "i.png",
+    "128": "i.png"
+  },
+  "permissions": ["<all_urls>"]
+}

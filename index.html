@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>griddlesUiCard-sample-app</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="griddles-ui-card/bower_components/platform/platform.js"></script>
+
+  <link rel="import" href="griddles-ui-card/bower_components/core-icons/core-icons.html">
+  <link rel="import" href="griddles-ui-card/bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="griddles-ui-card/bower_components/font-roboto/roboto.html">
+  <link rel="import" href="griddles-ui-card/bower_components/paper-button/paper-button.html">
+  <link rel="import" href="griddles-ui-card/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="griddles-ui-card/bower_components/paper-fab/paper-fab.html">
+  <!-- For dialog -->
+  <link rel="import" href="griddles-ui-card/bower_components/paper-button/paper-button.html">
+  <link rel="import" href="griddles-ui-card/bower_components/paper-dialog/paper-dialog-transition.html">
+  <link rel="import" href="griddles-ui-card/bower_components/paper-dialog/paper-dialog.html">
+
+  <!-- For griddles -->
+  <link rel="import" href="griddles-ui-card/griddles-ui-card/griddles-ui-card.html">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    #chromeapp {
+      width: 100%;
+      height: 585px;
+      margin-top: 64px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body unresolved>
+  <core-toolbar>
+    <paper-icon-button icon="refresh" id='btn_refresh'></paper-icon-button>
+    <span flex>&lt;griddles-ui-card&gt; sample app</span>
+    <paper-fab icon="launch" id='btn_settings' title="Open Design panel"></paper-fab>
+  </core-toolbar>
+
+
+  <div id='chromeapp'>
+    <griddles-ui-card wrappedBy='chromeapp'
+                    query='initial'
+                    cardWidth=200>
+    </griddles-ui-card>
+  </div>
+
+
+  <!-- dialog -->
+  <paper-dialog heading="Design" transition="paper-dialog-transition-center" id="dialog_settings">
+    <p>
+      <table>
+        <tr><td><b>GRIDDLES-UI-CARD</b></td></tr>
+        <tr>
+          <td>cardWidth</td>
+          <td><input type=number id='cardWidth' min=10 value=200></td>
+          <td>cardMarginBottom</td>
+          <td><input type=number id='cardMarginBottom' min=0 value=16></td>
+        </tr>
+        <tr>
+          <td>streamMarginLeft</td>
+          <td><input type=number id='streamMarginLeft' min=0 value=8></td>
+          <td>streamMarginRight</td>
+          <td><input type=number id='streamMarginRight' min=0 value=8></td>
+        </tr>
+        <tr>
+          <td>streamPaddingTop</td>
+          <td><input type=number id='streamPaddingTop' min=0 value=10></td>
+          <td>numberReadAtOnce</td>
+          <td><input type=number id='numberReadAtOnce' min=0 value=20></td>
+        </tr>
+        <tr>
+          <td>displayFromTopLeftToBottomRight</td>
+          <td><input type=number id='displayFromTopLeftToBottomRight' min=0 value=0.5></td>
+        </tr>
+
+        <tr><td></rd><br><b>GRIDDLE-CARD</b></td></tr>
+        <tr>
+          <td>type</td>
+          <td><input type=text id='type' value='card' disabled></td>
+          <td>borderRadius</td>
+          <td><input type=number id='borderRadius' min=0 value=0></td>
+        </tr>
+        <tr>
+          <td>paperColor</td>
+          <td><input type=color id='paperColor' value="#FFFFFF"></td>
+          <td>height</td>
+          <td><input type=text id='height' value="random" placeholder="Number, 'false' or 'random'"></td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td><input type=text id='insert' value="append" placeholder="'append' or 'prepend'"></td>
+          <td>contnet(tag)</td>
+          <td><input type=text id='content' value="" placeholder="<div>Hello, world!</div>"></td>
+        </tr>
+        <tr>
+          <td>shadowDepth</td>
+          <td><input type=number id='shadowDepth' min=0 value=1></td>
+        </tr>
+      </table>
+    </p>
+    <paper-button label="Done" affirmative="" autofocus="" id="dialog_btn_done">Done</paper-button>
+  </paper-dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
